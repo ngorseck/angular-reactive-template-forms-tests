@@ -1,0 +1,33 @@
+<div>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Username</label>
+      <input id="username" formControlName="username" type="text"
+             [class.is-invalid]="isTouchedOrDirty(formGroup.controls.username)" />
+      <small *ngIf="formGroup.controls.username.invalid">
+        <ng-container *ngIf="formGroup.controls.username.hasError('required')">
+          The username is required
+        </ng-container>
+        <ng-container *ngIf="formGroup.controls.username.hasError('minlength')">
+          The username must have a minimum of 3 caracters
+        </ng-container>
+      </small>
+    </div>
+    <div>
+      <label>Password</label>
+      <input id="password" type="password"  formControlName="password"
+             [class.is-invalid]="isTouchedOrDirty(formGroup.controls.password)"/>
+      <small *ngIf="formGroup.controls.password.invalid">
+        <ng-container *ngIf="formGroup.controls.password.hasError('required')">
+          The username is required
+        </ng-container>
+        <ng-container *ngIf="formGroup.controls.password.hasError('minlength')">
+          The username must have a minimum of 3 caracters
+        </ng-container>
+      </small>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>

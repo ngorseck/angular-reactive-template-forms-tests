@@ -1,0 +1,21 @@
+<div>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Data</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (data of dataObjects; track data.id;) {
+        <tr>
+          <td>{{ data.id }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data?.data?.price }} , {{ data?.data?.color }} , {{ data?.data?.generation }} , {{ data.data?.year }} , {{ data.data?.year }} , {{ data.data?.Description }}</td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+</div>
